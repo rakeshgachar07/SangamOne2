@@ -68,13 +68,7 @@ public class R12 {
 			String s1 = list2.get(i);
 			String fName1 = "sorted_"+ s1 + ".txt";
 			FileWriter fw1 = new FileWriter(fName1);
-			temp1 = list1.stream().filter(w -> w.startsWith(s1)).collect(Collectors.toList());
-			for(String ele2: temp1) {
-				fw1.write(ele2);
-				fw1.write("\n");
-			}
-			String s2 = list2.get(i+26);
-			temp1 = list1.stream().filter(w -> w.startsWith(s2)).collect(Collectors.toList());
+			temp1 = list1.stream().filter(w -> w.substring(0,1).equalsIgnoreCase(s1)).collect(Collectors.toList());
 			for(String ele2: temp1) {
 				fw1.write(ele2);
 				fw1.write("\n");
